@@ -1,0 +1,29 @@
+{
+  "name": "quotes-on-design",
+  "version": "1.0.0",
+  "description": "Single Page Quote Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredblumer/quotes-on-design.git"
+  },
+  "keywords": [
+    "SPA",
+    "Quotes",
+    "on",
+    "Design"
+  ],
+  "author": "Jared Blumer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaredblumer/quotes-on-design/issues"
+  },
+  "homepage": "https://github.com/jaredblumer/quotes-on-design#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
