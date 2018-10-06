@@ -7,7 +7,7 @@ var port = process.env.PORT || 8080;
 // Set up mongo
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
-const url = MONGODB_URI;
+const url = process.env.MONGODB_URI;
 
 const client = new MongoClient(url);
 var db;
