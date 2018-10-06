@@ -32,6 +32,7 @@ app.get('/api', (req, res) => {
     });
   });
   promise.then(function(value) {
+    res.set('Content-Type', 'application/json');
     res.send(value);
   });
 });
