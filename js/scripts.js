@@ -1,4 +1,3 @@
-
 // Request Quote, Populate Page, & Update Twitter URL
 function getQuote() {
   $.ajax({

@@ -25,8 +25,14 @@ app.get('/api', (req, res) => {
     var cursor = collection.find()
       .project({ _id: 0 });
     cursor.toArray(function(err, docs) {
-      console.log(docs);
+      var docsLen = docs.length;
+      // Choose random quote
+      var quoteIndex = Math.floor(Math.random() * (docsLen - 1));
+      resolve(docs[quoteIndex]);
     });
+  });
+  promise.then(function(value) {
+    res.send(value);
   });
 });
 
