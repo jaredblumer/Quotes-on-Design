@@ -1,15 +1,13 @@
 // Request Quote, Populate Page, & Update Twitter URL
 function getQuote() {
   $.ajax({
-    cache: false,
-    url: "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1",
+    cache: true,
+    url: "https://success-quotes.herokuapp.com/api",
     dataType: "json",
     success:
     function(response) {
-      var result = response.shift();
-      var content = result.content;
-      var quote = $(content).text().trim();
-      var author = result.title.trim();
+      var quote = response.quote;
+      var author = response.author;
       console.log(result);
       console.log(quote);
 
