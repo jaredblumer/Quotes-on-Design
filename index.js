@@ -38,7 +38,7 @@ app.get('/api', (req, res) => {
   });
 });
 
-// Get index.html
+// Render index.html
 app.get('/', function(req, res) {
   var promise = new Promise(function(resolve, reject) {
     var cursor = collection.find()
@@ -51,7 +51,7 @@ app.get('/', function(req, res) {
     });
   });
   promise.then(function(quoteObj) {
-    var quote = quoteObj.quote;
+    var quote = '\u201C' + quoteObj.quote + '\u201D';
     var author = quoteObj.author;
     res.set('Content-Type', 'text/html');
     res.render('index', {
