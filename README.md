@@ -1,6 +1,12 @@
-# Quotes on Design
+# Success Quotes
 
-This single page application uses Chris Coyler's [Quotes on Design API](https://quotesondesign.com/api-v4-0/) to dynamically generate a single quote result.
+Success Quotes is a single page application that displays advice on achieving success in life from famous figures throughout history and the present day.
+
+View the application at [https://success-quotes.herokuapp.com/](https://success-quotes.herokuapp.com/)
+
+## API
+
+Success Quotes also offers an API that returns a random quote as JSON. To request a quote, use this URL: [https://success-quotes.herokuapp.com/api](https://success-quotes.herokuapp.com/api)
 
 ## Author
 
