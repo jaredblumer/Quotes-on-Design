@@ -3,8 +3,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 var port = process.env.PORT || 8080;
+app.set('view engine', 'ejs');
 
-// Set up mongo
+// Set up mongoDB
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const url = process.env.MONGODB_URI;
@@ -39,7 +40,25 @@ app.get('/api', (req, res) => {
 
 // Get index.html
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
+  var promise = new Promise(function(resolve, reject) {
+    var cursor = collection.find()
+      .project({ _id: 0 });
+    cursor.toArray(function(err, docs) {
+      var docsLen = docs.length;
+      // Choose random quote
+      var quoteIndex = Math.floor(Math.random() * (docsLen - 1));
+      resolve(docs[quoteIndex]);
+    });
+  });
+  promise.then(function(quoteObj) {
+    var quote = quoteObj.quote;
+    var author = quoteObj.author;
+    res.set('Content-Type', 'text/html');
+    res.render('index', {
+      quote: quote,
+      author: author
+    });
+  });
 });
 
 // Serve CSS Directory
