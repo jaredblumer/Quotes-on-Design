@@ -1,3 +1,5 @@
+// index.js
+
 // Set Up Express
 const express = require('express');
 const app = express();
@@ -21,6 +23,7 @@ client.connect(function(err) {
   collection = db.collection('quotes');
 });
 
+// API route
 app.get('/api', (req, res) => {
   var promise = new Promise(function(resolve, reject) {
     var cursor = collection.find()
@@ -64,9 +67,10 @@ app.get('/', function(req, res) {
 // Serve CSS Directory
 app.use('/css', express.static('css'));
 
-//Serve Javascript Directory
+// Serve Javascript Directory
 app.use('/js', express.static('js'));
 
+// Listen on port
 app.listen(port, () => {
     console.log(`Server listening on port ${port}.`);
 });
