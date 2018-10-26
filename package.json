@@ -12,10 +12,7 @@
     "url": "git+https://github.com/jaredblumer/quotes-on-design.git"
   },
   "keywords": [
-    "SPA",
-    "Quotes",
-    "on",
-    "Design"
+    "quotes"
   ],
   "author": "Jared Blumer",
   "license": "MIT",
