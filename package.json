@@ -1,10 +1,10 @@
 {
-  "name": "quotes-on-design",
+  "name": "success-quotes",
   "version": "1.0.0",
   "description": "Single Page Quote Application",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node index.js"
   },
   "repository": {
@@ -27,5 +27,8 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mongodb": "^3.1.6"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
   }
 }
