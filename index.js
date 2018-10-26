@@ -34,7 +34,7 @@ app.get('/api', (req, res) => {
   });
   promise.then(function(value) {
     res.set('Content-Type', 'application/json');
-    res.send(value);
+    res.status(200).send(value);
   });
 });
 
@@ -54,7 +54,7 @@ app.get('/', function(req, res) {
     var quote = '\u201C' + quoteObj.quote + '\u201D';
     var author = quoteObj.author;
     res.set('Content-Type', 'text/html');
-    res.render('index', {
+    res.status(200).render('index', {
       quote: quote,
       author: author
     });
