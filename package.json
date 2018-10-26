@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaredblumer/quotes-on-design.git"
+    "url": "git+https://github.com/jaredblumer/success-quotes"
   },
   "keywords": [
     "quotes"
@@ -17,9 +17,9 @@
   "author": "Jared Blumer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jaredblumer/quotes-on-design/issues"
+    "url": "https://github.com/jaredblumer/success-quotes"
   },
-  "homepage": "https://github.com/jaredblumer/quotes-on-design#readme",
+  "homepage": "https://success-quotes.herokuapp.com/",
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3",
