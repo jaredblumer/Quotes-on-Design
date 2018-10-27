@@ -1,15 +1,17 @@
 // index.js
 
+// Set Up Node Dependencies
+const path = require('path');
+const assert = require('assert');
+
 // Set Up Express
 const express = require('express');
 const app = express();
-const path = require('path');
 var port = process.env.PORT || 8080;
 app.set('view engine', 'ejs');
 
 // Set up mongoDB
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
 const url = process.env.MONGODB_URI;
 
 const client = new MongoClient(url);
@@ -22,6 +24,9 @@ client.connect(function(err) {
   db = client.db('success-quotes-api');
   collection = db.collection('quotes');
 });
+
+// Serve Static Files
+app.use(express.static('public'));
 
 // API route
 app.get('/api', (req, res) => {
@@ -64,11 +69,15 @@ app.get('/', function(req, res) {
   });
 });
 
-// Serve CSS Directory
-app.use('/css', express.static('css'));
-
-// Serve Javascript Directory
-app.use('/js', express.static('js'));
+// 404 Handling
+app.use(function(req, res, next) {
+  res.set('Content-Type', 'text/html');
+  res.status(404).render('index', {
+    quote: "404: Whoops, this page doesn't exist. " +
+            "Click the new quote button below to use the app.",
+    author: 'The Internet'
+  });
+});
 
 // Listen on port
 app.listen(port, () => {
